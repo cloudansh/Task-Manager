@@ -1,0 +1,213 @@
+Reset basic elements
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    font-family: "Oi", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    color: #333;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Toggle Button Styling */
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode #theme-toggle {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.dark-mode .container {
+    background: rgba(30, 30, 30, 0.95);
+}
+.dark-mode{
+    background: rgb(227, 199, 231);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease-in-out;
+}
+
+.input-section input:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+}
+
+/* Button Styling */
+.input-section button {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    padding: 12px 24px;
+    color: black;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-section button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(to right, #fad0c4, #ff9a9e);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Task List */
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    margin: 8px 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    border-radius: 12px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Completed Tasks */
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: #ff5c5c;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff1e1e;
+    transform: scale(1.1);
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+    }
+    .input-section {
+        flex-direction: column;
+    }
+    .input-section button {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+}
+
+/* Apply animations */
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+
